@@ -1,0 +1,827 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fffdf0;
+    color: #333;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px 30px;
+    background: linear-gradient(to bottom, #fff8dc, #fffdf0);
+}
+
+h1 {
+    font-size: 3rem;
+    color: #e6b800;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.flower-divider {
+    height: 30px;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/009/787/372/non_2x/yellow-flowers-watercolor-illustration-free-png.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    margin: 20px auto;
+    opacity: 0.8;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #ffd700;
+    color: #333;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffcc00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.flower-container {
+    flex: 1;
+    min-width: 300px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.flower {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 1s ease;
+}
+
+.flower-1 {
+    background-image: url('https://png.pngtree.com/png-clipart/20231006/original/pngtree-bunch-of-yellow-flower-png-image_13130786.png');
+    top: 50px;
+    left: 20%;
+    animation: float 4s infinite ease-in-out;
+}
+
+.flower-2 {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW3EUeohtaRvUI5vFmvjdJ1WM8bclPtpGK0A&s');
+    top: 120px;
+    right: 20%;
+    animation: float 5s infinite ease-in-out reverse;
+}
+
+.flower-3 {
+    background-image: url('https://cdn.pixabay.com/photo/2015/11/08/23/29/flower-1034403_1280.png');
+    bottom: 50px;
+    left: 30%;
+    animation: float 4.5s infinite ease-in-out 1s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.gallery {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 2.2rem;
+    color: #d4af37;
+    margin-bottom: 40px;
+}
+
+.flower-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.flower-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.flower-card:hover {
+    transform: translateY(-10px);
+}
+
+.flower-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+#sunflower {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIr0VpvdiZEjiA091Vd3ZWmUWGhuvToohd8A&s');
+}
+
+#daffodil {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/021/286/102/non_2x/beautiful-daffodils-flowers-free-png.png');
+}
+
+#tulip {
+    background-image: url('https://img.freepik.com/vector-gratis/ramo-tulipanes-amarillos-primavera-blanco_87521-2751.jpg');
+}
+
+#chrysanthemum {
+    background-image: url('https://png.pngtree.com/png-clipart/20240312/original/pngtree-yellow-chrysanthemum-flower-png-image_14570171.png');
+}
+
+.flower-card h3 {
+    padding: 15px 0 5px;
+    color: #e6b800;
+}
+
+.flower-card p {
+    padding: 0 15px 20px;
+    color: #666;
+}
+
+.quote {
+    background-color: #fff8e1;
+    padding: 60px 40px;
+    border-radius: 15px;
+    margin: 60px 0;
+    text-align: center;
+    box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+blockquote {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #b8860b;
+    font-style: italic;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px 50px;
+    background: linear-gradient(to top, #fff8dc, #fffdf0);
+}
+
+footer p {
+    color: #b8860b;
+    font-size: 0.9rem;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fffdf0;
+    margin: 10% auto;
+    padding: 30px;
+    width: 70%;
+    max-width: 700px;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #e6b800;
+}
+
+.modal h2 {
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.modal p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Music Player Styles */
+.music-player {
+    margin: 60px 0;
+    padding: 40px;
+    background-color: #fffbec;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.music-player h2 {
+    text-align: center;
+    color: #d4af37;
+    margin-bottom: 30px;
+}
+
+.player-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.album-cover {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.song-details h3 {
+    color: #d4af37;
+    margin-bottom: 5px;
+}
+
+.song-details p {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.play-button {
+    background-color: #ffd700;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.play-button:hover {
+    background-color: #ffcc00;
+    transform: scale(1.05);
+}
+
+.progress-container {
+    flex: 1;
+    height: 6px;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    margin: 0 10px;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #ffd700;
+    border-radius: 3px;
+    transition: width 0.1s linear;
+}
+
+/* Timeline Styles */
+.timeline {
+    margin: 80px 0;
+    padding: 20px;
+}
+
+.timeline h2 {
+    text-align: center;
+    color: #d4af37;
+    margin-bottom: 50px;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    background-color: #ffd700;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.timeline-date {
+    position: absolute;
+    top: 0;
+    width: 180px;
+    padding: 10px 15px;
+    background-color: #ffd700;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    text-align: center;
+    left: calc(50% - 210px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content {
+    position: relative;
+    width: calc(50% - 40px);
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    right: calc(-50% - 40px);
+}
+
+.timeline-item:nth-child(even) .timeline-date {
+    left: auto;
+    right: calc(50% - 210px);
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    left: calc(50% - 40px);
+    right: auto;
+}
+
+.timeline-content h3 {
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+.timeline-flower {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('https://png.pngtree.com/png-clipart/20231006/original/pngtree-bunch-of-yellow-flower-png-image_13130786.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(odd) .timeline-flower {
+    left: -15px;
+}
+
+.timeline-item:nth-child(even) .timeline-flower {
+    right: -15px;
+}
+
+/* Memories Styles */
+.memories {
+    margin: 80px 0;
+    padding: 20px;
+}
+
+.memories h2 {
+    text-align: center;
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.memory-intro {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    text-align: center;
+    color: #777;
+    font-style: italic;
+}
+
+.memories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.memory-card {
+    height: 250px;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.memory-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.memory-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 215, 0, 0.8);
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.memory-card:hover .memory-overlay {
+    transform: translateY(0);
+}
+
+.memory-overlay h3 {
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+#memory1 {
+    background-image: url('images/memoria1.png');
+}
+
+#memory2 {
+    background-image: url('images/memoria2.png');}
+
+#memory3 {
+    background-image: url('images/memoria3.png');
+}
+
+#memory4 {
+    background-image: url('images/memoria4.png');
+}
+
+/* Love Letter Styles */
+.love-letter {
+    margin: 80px 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.letter-paper {
+    max-width: 700px;
+    background-color: #fffef7;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border: 1px solid #f0e8d0;
+}
+
+.letter-paper::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+.letter-content {
+    font-family: 'Georgia', serif;
+    color: #555;
+    line-height: 1.8;
+}
+
+.letter-content h2 {
+    color: #d4af37;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.letter-content p {
+    margin-bottom: 15px;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    margin-top: 30px;
+    color: #b8860b;
+}
+
+/* Interactive Garden Styles */
+.interactive-garden {
+    margin: 80px 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.interactive-garden h2 {
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.garden-intro {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #777;
+}
+
+.garden-container {
+    height: 300px;
+    background-color: #f9f8f0;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+    border: 2px dashed #ffeba0;
+}
+
+.garden-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+#plantFlower {
+    background-color: #e6b800;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wish-box {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+}
+
+#wishInput {
+    flex: 1;
+    padding: 10px 15px;
+    border: 2px solid #ffe066;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+#submitWish {
+    background-color: #ffd700;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    padding: 0 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.wishes-container {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.wish-item {
+    background-color: #fffbeb;
+    padding: 10px 15px;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    color: #b8860b;
+    font-size: 0.9rem;
+    max-width: 200px;
+    text-align: center;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+/* Memory Modal Styles */
+.memory-modal-content {
+    padding: 0;
+    overflow: hidden;
+    max-width: 800px;
+}
+
+.memory-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.memory-detail img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.memory-detail-text {
+    padding: 30px;
+}
+
+.memory-detail-text h2 {
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.memory-date {
+    margin-top: 20px;
+    color: #888;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Enhanced Footer Styles */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+}
+
+.footer-column h3 {
+    color: #d4af37;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 8px;
+    color: #b8860b;
+}
+
+.footer-column p {
+    color: #b8860b;
+    line-height: 1.6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+    
+    .hero-content {
+        order: 2;
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    .flower-container {
+        order: 1;
+        height: 300px;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .modal-content {
+        width: 90%;
+        margin: 20% auto;
+    }
+
+    .timeline-container::before {
+        left: 30px;
+    }
+    
+    .timeline-date {
+        left: 65px;
+        width: 150px;
+        top: -30px;
+    }
+    
+    .timeline-content {
+        width: calc(100% - 80px);
+        left: 80px;
+        right: auto;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-date {
+        left: 65px;
+        right: auto;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+        left: 80px;
+    }
+    
+    .timeline-flower {
+        display: none;
+    }
+    
+    .memory-detail {
+        flex-direction: column;
+    }
+    
+    .memory-detail img {
+        max-height: 250px;
+    }
+    
+    .letter-paper {
+        padding: 25px;
+    }
+}

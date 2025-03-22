@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jardín de Puffy y James</title>
+    <!-- Favicon links - new additions -->
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <meta name="theme-color" content="#FFD700">
+    <!-- End of favicon links -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="particles"></div>
+    
+    <header>
+        <h1>Jardín de Puffy y James</h1>
+        <div class="flower-divider"></div>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>just you and me</h2>
+                <p>Existe un jardin lleno de flores amarillas, donde aquellas se cuidan con amor y la ternura de dos almas enamoradas</p>
+                <button id="showMore">Descubre Más</button>
+            </div>
+            <div class="flower-container">
+                <div class="flower flower-1"></div>
+                <div class="flower flower-2"></div>
+                <div class="flower flower-3"></div>
+            </div>
+        </section>
+        
+        <section class="gallery">
+            <h2>Galería de Flores</h2>
+            <div class="flower-grid">
+                <div class="flower-card">
+                    <div class="flower-img" id="sunflower"></div>
+                    <h3>Girasol</h3>
+                    <p>Símbolo de adoración y lealtad, siempre mirando hacia el sol.</p>
+                </div>
+                <div class="flower-card">
+                    <div class="flower-img" id="daffodil"></div>
+                    <h3>Narciso</h3>
+                    <p>Representa el renacimiento y nuevos comienzos en la primavera.</p>
+                </div>
+                <div class="flower-card">
+                    <div class="flower-img" id="tulip"></div>
+                    <h3>Tulipán Amarillo</h3>
+                    <p>Expresa alegría y pensamientos soleados a quien lo recibe.</p>
+                </div>
+                <div class="flower-card">
+                    <div class="flower-img" id="chrysanthemum"></div>
+                    <h3>Crisantemo</h3>
+                    <p>Simboliza la felicidad y la larga vida en muchas culturas.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="music-player">
+            <h2>Nuestra Canción</h2>
+            <div class="player-container">
+                <div class="player-info">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrXQLgXyb3oaNsky2jQ1rwwkwweHxvXKhOag&s" alt="Flores Amarillas" class="album-cover">
+                    <div class="song-details">
+                        <h3>The Owl</h3>
+                        <p>KOKIA</p>
+                    </div>
+                </div>
+                <div class="player-controls">
+                    <button id="playButton" class="play-button"><i class="fas fa-play"></i></button>
+                    <div class="progress-container">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <span id="currentTime">0:00</span> / <span id="duration">3:45</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="timeline">
+            <h2>Nuestro Camino Juntos</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-date">Primer encuentro</div>
+                    <div class="timeline-content">
+                        <h3>20/4/2020</h3>
+                        <p>Supe que había encontrado algo especial. Tus ojos iluminaron mi mundo.</p>
+                        <div class="timeline-flower"></div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Primer te quiero</div>
+                    <div class="timeline-content">
+                        <h3>17/7/2020</h3>
+                        <p>Fue la primera vez que escuche un te quiero tan hermoso.</p>
+                        <div class="timeline-flower"></div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Just and me</div>
+                    <div class="timeline-content">
+                        <h3>25/7/2020</h3>
+                        <p>El nacimiento de un lugar en donde tu y yo podriamos serlo para siempre y crear nuestro jardin.</p>
+                        <div class="timeline-flower"></div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">El inicio</div>
+                    <div class="timeline-content">
+                        <h3>27/7/2020</h3>
+                        <p>El amor florecio entre nosotros un amor que jamas sera borrado.</p>
+                        <div class="timeline-flower"></div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Hoy</div>
+                    <div class="timeline-content">
+                        <h3>Un jardín en pleno crecimiento</h3>
+                        <p>Cada día nuestro amor florece más. Este es solo el comienzo de nuestra historia.</p>
+                        <div class="timeline-flower"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="memories">
+            <h2>Nuestros Momentos Especiales</h2>
+            <div class="memory-intro">
+                <p>Cada instante juntos es una flor más en nuestro jardín de recuerdos. Aquí hay algunos de esos momentos que siempre llevaré en mi corazón.</p>
+            </div>
+            <div class="memories-grid">
+                <div class="memory-card" id="memory1">
+                    <div class="memory-overlay">
+                        <h3>Tu primer regalo</h3>
+                    </div>
+                </div>
+                <div class="memory-card" id="memory2">
+                    <div class="memory-overlay">
+                        <h3>Nuestro primer jardin</h3>
+                    </div>
+                </div>
+                <div class="memory-card" id="memory3">
+                    <div class="memory-overlay">
+                        <h3>Nuestras peleas por quien se ama mas</h3>
+                    </div>
+                </div>
+                <div class="memory-card" id="memory4">
+                    <div class="memory-overlay">
+                        <h3>Nuestro lugar favorito</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="love-letter">
+            <div class="letter-paper">
+                <div class="letter-content">
+                    <h2>Mi Amor,</h2>
+                    <p>Si tuviera que elegir una flor para representar lo que siento por ti, sería sin duda una flor amarilla. No por su belleza, que es mucha, sino porque representa exactamente lo que tú traes a mi vida: luz, alegría y calidez.</p>
+                    <p>Cada día a tu lado es como caminar por un jardín en plena primavera. Tu sonrisa me recuerda que hay belleza en el mundo, y tu corazón me enseña lo que significa amar de verdad.</p>
+                    <p>Quiero que sepas que estoy aquí para cuidar de nuestro jardín. Para regarlo cuando haga falta, para protegerlo de las tormentas, y para maravillarme con su crecimiento día tras día.</p>
+                    <p>Te amo más de lo que las palabras pueden expresar, pero espero que estas flores amarillas te muestren un poco de lo que hay en mi corazón.</p>
+                    <p class="signature">Con todo mi amor,<br>Siempre tuyo James</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="interactive-garden">
+            <h2>Nuestro Jardín Interactivo</h2>
+            <p class="garden-intro">Haz clic para plantar más flores en nuestro jardín virtual. ¡Cada flor representa un deseo para nuestro futuro juntos!</p>
+            <div class="garden-container" id="interactiveGarden">
+                <!-- Las flores se agregarán aquí con JavaScript -->
+            </div>
+            <div class="garden-controls">
+                <button id="plantFlower">Plantar una flor</button>
+                <div class="wish-box">
+                    <input type="text" id="wishInput" placeholder="Escribe un deseo para nuestro futuro...">
+                    <button id="submitWish">💛</button>
+                </div>
+            </div>
+            <div class="wishes-container" id="wishesContainer">
+                <!-- Los deseos se agregarán aquí -->
+            </div>
+        </section>
+        
+        <section class="quote">
+            <blockquote>
+                "Por todo eso y mas amor mio te deseo un feliz comienzo de primavera, quiero que sepas que te amo con todo mi corazon y que siempre estare a tu lado"
+            </blockquote>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="flower-divider"></div>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Nuestras Flores</h3>
+                <ul>
+                    <li>Girasoles</li>
+                    <li>Narcisos</li>
+                    <li>Tulipanes</li>
+                    <li>Crisantemos</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Significados</h3>
+                <ul>
+                    <li>Amarillo: Felicidad</li>
+                    <li>Flores: Amor</li>
+                    <li>Jardín: Nuestro Hogar</li>
+                    <li>Primavera: Renovación</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Recuerdos</h3>
+                <p>Cada flor es un momento especial que hemos vivido juntos. Un jardín que seguirá creciendo con cada día que pasemos juntos.</p>
+            </div>
+        </div>
+        <p>Creado con amor y flores amarillas 💛 2025</p>
+    </footer>
+    
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Nos conocimos ya hace muchisimo tiempo</h2>
+            <p>Un tiempo donde una joven muchacha de pocos 19 años planto la semilla de amor en el corazon de un hombre que penso que no volceria a amar.</p>
+            <p>Hoy el jardin esta mas que florecido, un jardin que prometo cuidar con mi alma y todo mi corazon, por eso el dia de hoy te regalo estas flores amarillas</p>
+        </div>
+    </div>
+    
+    <div id="memoryModal" class="modal">
+        <div class="modal-content memory-modal-content">
+            <span class="close memory-close">&times;</span>
+            <div class="memory-detail">
+                <img src="" alt="Memoria" id="memoryDetailImage">
+                <div class="memory-detail-text">
+                    <h2 id="memoryDetailTitle"></h2>
+                    <p id="memoryDetailDescription"></p>
+                    <p class="memory-date" id="memoryDetailDate"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="backgroundMusic" loop>
+        <source src="https://example.com/flores-amarillas.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
