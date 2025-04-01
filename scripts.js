@@ -410,4 +410,180 @@ document.addEventListener('DOMContentLoaded', function() {
             plantRandomFlower(x, y);
         }
     });
+
+    // YouTube Player Toggle Functionality
+    const switchPlayerButtn = document.getElementById('switchPlayer');
+    const youtubePlayerContainer = document.querySelector('.youtube-player-container');
+    const originalPlayerControls = document.querySelector('.original-player-controls');
+    let showingYouTubePlayer = true;
+
+    if (switchPlayerButton) {
+        switchPlayerButton.addEventListener('click', function() {
+            if (showingYouTubePlayer) {
+                // Switch to original player
+                youtubePlayerContainer.style.display = 'none';
+                originalPlayerControls.style.display = 'flex';
+                switchPlayerButton.textContent = 'Ver playlist de YouTube';
+                
+                // Pause YouTube video when switching
+                const youtubePlayer = document.getElementById('youtubePlayer');
+                if (youtubePlayer && youtubePlayer.contentWindow) {
+                    youtubePlayer.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                }
+            } else {
+                // Switch to YouTube player
+                youtubePlayerContainer.style.display = 'block';
+                originalPlayerControls.style.display = 'none';
+                switchPlayerButton.textContent = 'Ver reproductor original';
+                
+                // Pause audio when switching
+                if (audioElement) {
+                    audioElement.pause();
+                    if (playButton) {
+                        playButton.innerHTML = '<i class="fas fa-play"></i>';
+                        isPlaying = false;
+                    }
+                }
+            }
+            showingYouTubePlayer = !showingYouTubePlayer;
+        });
+    }
+
+    // YouTube API ready function
+    let youtubeReady = false;
+    let youtubePlayer = null;
+    
+    // Create YouTube API script
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    
+    // This function will be called when the YouTube API is ready
+    window.onYouTubeIframeAPIReady = function() {
+        youtubeReady = true;
+        
+        // Check if the iframe exists
+        const playerElement = document.getElementById('youtubePlayer');
+        if (playerElement) {
+            // Create a checker for YouTube player availability
+            const errorTimer = setTimeout(function() {
+                document.querySelector('.youtube-fallback').style.display = 'block';
+            }, 5000); // Show fallback after 5 seconds if player doesn't load
+            
+            try {
+                // Initialize player with API
+                youtubePlayer = new YT.Player('youtubePlayer', {
+                    events: {
+                        'onReady': function() {
+                            // Player loaded successfully
+                            clearTimeout(errorTimer);
+                            document.querySelector('.youtube-fallback').style.display = 'none';
+                        },
+                        'onError': function() {
+                            // Error loading player or video
+                            document.querySelector('.youtube-fallback').style.display = 'block';
+                        }
+                    }
+                });
+            } catch (e) {
+                // If YouTube API fails, show fallback
+                document.querySelector('.youtube-fallback').style.display = 'block';
+            }
+        }
+    };
+    
+    // Handle toggling between YouTube and original player with better error states
+    const switchPlayerButton = document.getElementById('switchPlayer');
+    if (switchPlayerButton) {
+        // Add a direct link to YouTube as fallback
+        switchPlayerButton.addEventListener('click', function() {
+            // ...existing code for switching player...
+            
+            if (!youtubeReady && showingYouTubePlayer) {
+                // If YouTube API didn't load, show a direct link
+                document.querySelector('.youtube-fallback').style.display = 'block';
+            }
+        });
+    }
+
+    // Enhanced Music Player Functionality
+    // Player Selection Logic
+    const playerSelectButtons = document.querySelectorAll('.player-select-btn');
+    const playerEmbeds = document.querySelectorAll('.player-embed');
+    
+    // Initialize Spotify Web Player API
+    window.onSpotifyWebPlaybackSDKReady = () => {
+        // Spotify is ready (optional if using the iframe embed approach)
+        console.log('Spotify Web Playback SDK Ready');
+    };
+    
+    // Handle player selection
+    function selectPlayer(playerType) {
+        // Remove active class from all buttons and player embeds
+        playerSelectButtons.forEach(btn => btn.classList.remove('active'));
+        playerEmbeds.forEach(embed => embed.classList.remove('active'));
+        
+        // Add active class to selected button and player embed
+        document.querySelector(`.player-select-btn[data-player="${playerType}"]`).classList.add('active');
+        
+        switch(playerType) {
+            case 'spotify':
+                document.querySelector('.spotify-player-container').classList.add('active');
+                if (isPlaying && audioElement) {
+                    audioElement.pause();
+                    playButton.innerHTML = '<i class="fas fa-play"></i>';
+                    isPlaying = false;
+                }
+                break;
+                
+            case 'soundcloud':
+                document.querySelector('.soundcloud-player-container').classList.add('active');
+                if (isPlaying && audioElement) {
+                    audioElement.pause();
+                    playButton.innerHTML = '<i class="fas fa-play"></i>';
+                    isPlaying = false;
+                }
+                break;
+                
+            case 'original':
+                document.querySelector('.original-player-controls').classList.add('active');
+                break;
+        }
+    }
+    
+    // Add click event listeners to player selector buttons
+    playerSelectButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            selectPlayer(this.getAttribute('data-player'));
+        });
+    });
+    
+    // Original player controls
+    // ...existing code for playButton, audioElement, etc...
+    
+    // Load SoundCloud API
+    window.addEventListener('load', function() {
+        // Load SoundCloud Widget API
+        const SC_Widget_URL = 'https://w.soundcloud.com/player/api.js';
+        if (!document.querySelector(`script[src="${SC_Widget_URL}"]`)) {
+            const scScript = document.createElement('script');
+            scScript.src = SC_Widget_URL;
+            document.body.appendChild(scScript);
+        }
+        
+        // Initialize SoundCloud widget when API is loaded
+        scScript.onload = function() {
+            if (window.SC && window.SC.Widget) {
+                const scIframe = document.querySelector('.soundcloud-player-container iframe');
+                if (scIframe) {
+                    const scWidget = SC.Widget(scIframe);
+                    
+                    scWidget.bind(SC.Widget.Events.READY, function() {
+                        console.log('SoundCloud widget ready');
+                    });
+                }
+            }
+        };
+    });
 });
